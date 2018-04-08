@@ -1,0 +1,14 @@
+
+Read images
+Noisy_Image = double(imread('slika_02.bmp'));
+Reference_Image = double(imread('slika_01.bmp'));
+Clean_Image = double(imread('slika_04.bmp'));
+
+value = SigmaNoisy(Reference_Image,Noisy_Image,Clean_Image);
+
+PSNR = 20*log10(255/value(:,4));
+
+sprintf('The sigma value calculated is %g.', value(:,4))
+sprintf('The PSNR value is %g.', PSNR)
+
+sigma = mean(value);

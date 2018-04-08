@@ -4,7 +4,7 @@ import os
 
 size = 512
 
-# Add yours
+# Add yours path to dataset
 DATASET_PATH = "/Users/lbasek/Desktop/NOS/T3i_Aligned/"
 
 batch_list = os.listdir(DATASET_PATH)

@@ -1,5 +1,5 @@
 
-Batch_01 = '/Users/lbasek/image-denoising-benchmark/dataset/batch8';
+Batch_01 = '/Users/lbasek/image-denoising-benchmark/dataset/batch5';
 
 % Read images
 Noisy_Image = imread(strcat(Batch_01 , '/noisy.bmp')); 
@@ -12,7 +12,9 @@ PSNR = 20*log10(255/value(:,4));
 sprintf('The PSNR value is %g.', PSNR)
 
 % Sigma 5, 10, 15, 20, 25, 50
-[Noisy, Denoised_Image]= BM3D(strcat(Batch_01 , '/noisy.bmp'),50);
+
+% Denoised_Image= BM3D(strcat(Batch_01 , '/noisy.bmp'),25);
+% Denoised_Image = KSVD_WRAP(strcat(Batch_01 , '/noisy.bmp'),10);
 
 % Show images
 figure; imshow(Noisy_Image);   

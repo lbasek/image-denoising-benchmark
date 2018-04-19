@@ -15,6 +15,7 @@ sprintf('The PSNR value is %g.', PSNR)
 
 % Denoised_Image= BM3D(strcat(Batch_01 , '/noisy.bmp'),25);
 % Denoised_Image = KSVD_WRAP(strcat(Batch_01 , '/noisy.bmp'),10);
+% Denoised_Image = WNNM_WRAP(strcat(Batch_01 , '/noisy.bmp'),10);
 
 % Show images
 figure; imshow(Noisy_Image);   

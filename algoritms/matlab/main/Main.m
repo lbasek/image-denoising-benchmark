@@ -29,6 +29,7 @@ sprintf('The PSNR value is %g.', PSNR)
 % Denoised_Image = WNNM_WRAP(strcat(BatchPath , NOISY),10);
 % Denoised_Image = FOE_WRAP(strcat(BatchPath , NOISY), 10);
 % Denoised_Image = NCSR_WRAP(strcat(BatchPath , NOISY),25);
+% Denoised_Image = EPLL_WRAP(strcat(BatchPath , NOISY), 10);
 
 % Show images
 figure; imshow(Noisy_Image);   

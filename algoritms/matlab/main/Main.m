@@ -1,14 +1,21 @@
-
-%BatchPath = '/Users/lbasek/image-denoising-benchmark/dataset/batch5';
-BatchPath = '../../../dataset/batch2';
-
+addpath(genpath('../BM3D'));
 addpath(genpath('../FOE'));
+addpath(genpath('../KSVD'));
+addpath(genpath('../NCSR'));
+addpath(genpath('../FOE'));
+addpath(genpath('../WNNM'));
 addpath(genpath('../PSNR'));
 
+NOISY = '/noisy.bmp';
+REFERENCE = '/reference.bmp';
+CLEAN = '/clean.bmp';
+
+BatchPath = '../../../dataset/batch2';
+
 % Read images
-Noisy_Image = imread(strcat(BatchPath , '/noisy.bmp')); 
-Reference_Image = imread(strcat(BatchPath ,'/reference.bmp'));
-Clean_Image = imread(strcat(BatchPath , '/clean.bmp'));
+Noisy_Image = imread(strcat(BatchPath , NOISY)); 
+Reference_Image = imread(strcat(BatchPath ,REFERENCE));
+Clean_Image = imread(strcat(BatchPath , CLEAN));
 
 % PSNR before
 value = SigmaNoisy(double(Reference_Image),double(Noisy_Image),double(Clean_Image));
@@ -17,10 +24,11 @@ sprintf('The PSNR value is %g.', PSNR)
 
 % Sigma 5, 10, 15, 20, 25, 50
 
-% Denoised_Image= BM3D(strcat(Batch_01 , '/noisy.bmp'),25);
-% Denoised_Image = KSVD_WRAP(strcat(Batch_01 , '/noisy.bmp'),10);
-% Denoised_Image = WNNM_WRAP(strcat(Batch_01 , '/noisy.bmp'),10);
-Denoised_Image = FOE_WRAP(strcat(BatchPath , '/noisy.bmp'), 10);
+% Denoised_Image = BM3D(strcat(BatchPath , NOISY),25);
+% Denoised_Image = KSVD_WRAP(strcat(BatchPath , NOISY),10);
+% Denoised_Image = WNNM_WRAP(strcat(BatchPath , NOISY),10);
+% Denoised_Image = FOE_WRAP(strcat(BatchPath , NOISY), 10);
+% Denoised_Image = NCSR_WRAP(strcat(BatchPath , NOISY),25);
 
 % Show images
 figure; imshow(Noisy_Image);   

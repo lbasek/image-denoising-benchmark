@@ -5,30 +5,6 @@ function denoised = EPLL_WRAP(image_path, sigma)
     redChannel = Noisy_Image(:,:,1); % Red channel
     greenChannel = Noisy_Image(:,:,2); % Green channel
     blueChannel = Noisy_Image(:,:,3); % Blue channel
-    
-%     redChannel=im2double(redChannel);
-%     if (length(size(redChannel))>2)
-%         redChannel = rgb2gray(redChannel);
-%     end
-%     if (max(redChannel(:))<2)
-%         redChannel = redChannel*255;
-%     end
-% 
-%     greenChannel=im2double(greenChannel);
-%     if (length(size(greenChannel))>2)
-%         greenChannel = rgb2gray(greenChannel);
-%     end
-%     if (max(greenChannel(:))<2)
-%         greenChannel = greenChannel*255;
-%     end
-% 
-%     blueChannel=im2double(blueChannel);
-%     if (length(size(blueChannel))>2)
-%         blueChannel = rgb2gray(blueChannel);
-%     end
-%     if (max(blueChannel(:))<2)
-%         blueChannel = blueChannel*255;
-%     end
 
     patchSize = 8;
     excludeList = [];

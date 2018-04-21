@@ -20,7 +20,7 @@ for iter = 1 : Par.Iter
     
     if (mod(iter-1,Par.Innerloop)==0)
         Par.patnum = Par.patnum-10;                                             % Lower Noise level, less NL patches
-        NL_mat  =  Block_matching(CurPat, Par, Neighbor_arr, Num_arr, Self_arr);% Caculate Non-local similar patches for each 
+        NL_mat  =  Block_matching_WNNM(CurPat, Par, Neighbor_arr, Num_arr, Self_arr);% Caculate Non-local similar patches for each 
         if(iter==1)
             Sigma_arr = Par.nSig * ones(size(Sigma_arr));                       % First Iteration use the input noise parameter
         end

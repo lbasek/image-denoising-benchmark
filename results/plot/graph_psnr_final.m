@@ -59,7 +59,7 @@ y3 = [psnr_row_10{1,2}, foe_10,foe_15,foe_20,foe_25,foe_50];
 y4 = [psnr_row_10{1,2}, epll_10,epll_15,epll_20,epll_25,epll_50];
 
 
-
+h = figure;
 hold on
 h1 = plot(x,y1,'-s','MarkerSize',10);
 h2 = plot(x,y2,'-s','MarkerSize',10);
@@ -71,4 +71,4 @@ ylabel('PSNR(dB)')
 xlabel('Noise Power')
 legend('BM3D','KSVD','FOE','EPLL');
 grid on
-
+saveas(h,'./graphs/psnr','png');

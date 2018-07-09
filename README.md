@@ -6,6 +6,10 @@ In this benchmark we compare some algorithms to denoise the image. We compare th
 
 NOTE: The source code was taken from the original articles and adapted to our benchmark.
 
+Contributors: 
+- Luka Bašek - https://github.com/lbasek
+- Ivan Gradečak - https://github.com/igradeca
+
 ## Diagrams
 
 ### Mean squared error
